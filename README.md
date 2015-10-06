@@ -10,15 +10,15 @@ Install the dependencies from npm:
 npm install
 ```
 
-Log in to https://developer.nest.com/clients
+Log in to https://developer.nest.com/products
 
 Create a client using the following permissions:
 
-- Away read v1
-- Camera read v1
-- Camera read + images v1*
-- Smoke+CO alarm read v3
-- Thermostat read v3
+- Away read v2
+- Camera read v2
+- Camera read + images v2*
+- Smoke+CO alarm read v4
+- Thermostat read v4
 
 **Note: Images are only available with a [Nest Aware][nest-aware] subscription.*
 
