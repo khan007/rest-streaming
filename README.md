@@ -2,6 +2,10 @@
 
 Sample app showcasing Nest's REST Streaming API using Node.js
 
+## Screenshot
+
+![Screenshot](screenshot.png)
+
 ## Install
 
 Install the dependencies from npm:
