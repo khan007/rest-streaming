@@ -16,14 +16,14 @@
 var http = require('http');
 var path = require('path');
 
-var express = require('express');
+var express = require('express'),SessionStore = require('session-mongoose')(express);
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var NestStrategy = require('passport-nest').Strategy;
 var session = require('express-session');
 var EventSource = require('eventsource');
 var openurl = require('openurl');
-var SessionStore = require('session-mongoose')(express)
+
 
 // Change for production apps.
 // This secret is used to sign session ID cookies.
