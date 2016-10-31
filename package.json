@@ -13,9 +13,9 @@
     "eventsource": "^0.1.6",
     "express": "^4.13.1",
     "express-session": "^1.11.3",
+    "mongoose": "^4.6.5",
     "openurl": "^1.1.0",
     "passport": "^0.2.2",
-    "passport-nest": "^1.0.0",
-	"mongoose": "^4.6.5"
+    "passport-nest": "^1.0.0"
   }
 }
