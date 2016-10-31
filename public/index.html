@@ -48,7 +48,14 @@
                 {{:target_temperature_f}}&deg;F
               {{/if}}
             </span>
-            <span>&bull;</span>
+            <span>&bull;</span><br>
+			<span>
+              <b>Ambiant temperature</b><br>
+			  {{:ambient_temperature_f}} F<br>
+              {{:ambient_temperature_c}} C
+            </span>
+            <span>&bull;</span><br>			
+			
             <b>Humidity:</b> {{:humidity}}%
             {{if has_leaf}}
               <span>
@@ -57,13 +64,36 @@
               <img src="/img/nest-leaf.png" class="leaf-img">
             {{/if}}
             {{if has_fan}}
-              <span>&bull;</span>
+              <span>&bull;</span><br>
+			  fan is active : {{:fan_timer_active}}
               {{if fan_timer_active}}
-                <b>Fan:</b> On ending on {{timeout:fan_timer_timeout}}
+                <b>Fan:</b> On ending on {{timeout:fan_timer_timeout}}				
               {{else}}
                 <b>Fan:</b> Off
               {{/if}}
-            {{/if}}
+            {{/if}}			
+			<span>&bull;</span><br>
+			
+			<br><b>Fan:</b> On ending on {{:fan_timer_timeout}}
+			<span>&bull;</span><br>
+			<span>
+              <b>Mode</b>
+              {{:hvac_state}}
+            </span>
+            <span>&bull;</span><br>
+			<span>
+              <b>time_to_target_training</b>
+              {{:time_to_target}} {{:time_to_target_training}}
+            </span>
+            <span>&bull;</span><br>
+			
+			<span>
+              <b>Is online</b>
+              {{:is_online}}
+            </span>
+            <span>&bull;</span><br>
+			
+			
           </div>
         </div>
       </div>
