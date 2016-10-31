@@ -1,1 +1,1 @@
-web: node server-client.js
+web: node server-only.js
