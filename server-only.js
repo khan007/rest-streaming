@@ -15,7 +15,7 @@
  */
 var http = require('http');
 var path = require('path');
-
+var app = connect();
 var express = require('express'),SessionStore = require('session-mongoose')(express);
 var bodyParser = require('body-parser');
 var passport = require('passport');
@@ -23,6 +23,7 @@ var NestStrategy = require('passport-nest').Strategy;
 var session = require('express-session');
 var EventSource = require('eventsource');
 var openurl = require('openurl');
+
 
 
 // Change for production apps.
