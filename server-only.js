@@ -23,6 +23,7 @@ var NestStrategy = require('passport-nest').Strategy;
 var session = require('express-session');
 var EventSource = require('eventsource');
 var openurl = require('openurl');
+var SessionStore = require('session-mongoose')(express)
 
 // Change for production apps.
 // This secret is used to sign session ID cookies.
@@ -86,11 +87,20 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({
-  secret: SUPER_SECRET_KEY,
-  resave: false,
-  saveUninitialized: false
-}));
+//app.use(session({
+//  secret: SUPER_SECRET_KEY,
+//  resave: false,
+//  saveUninitialized: false
+//}));
+app.use(
+  express.session({
+    store: new SessionStore({
+    url: 'mongodb://localhost/session',
+    interval: 1200000
+  }),
+  cookie: { maxAge: 1200000 },
+  secret: 'my secret'
+}))
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -142,5 +152,5 @@ var server = http.createServer(app);
  */
 server.listen(port);
 
-openurl.open('http://localhost:' + port + '/auth/nest');
+//openurl.open('http://localhost:' + port + '/auth/nest');
 console.log('Please click Accept in the browser window that just opened.');
